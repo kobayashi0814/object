@@ -3,13 +3,19 @@ package basic.human1;
 //データとしてのクラス宣言
 class Human {
     //フィールドの宣言
-    private String name;
+    private String name;  //
     private int age;
 
     //コンストラクタ
     public Human(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    //コンストラクタのオーバーロード
+    public Human(Human human) {
+        this.name = human.name;
+        this.age = human.age;
     }
 
     //アクセサ（ゲッター）
@@ -31,7 +37,7 @@ class Human {
     }
 
     //toStringメソッド
-    @Override
+    @Override //上書きする
     public String toString() {
         return "Human{" +
                 "name='" + name + '\'' +
