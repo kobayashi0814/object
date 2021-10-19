@@ -1,16 +1,18 @@
 package ex.student2;
 
+import basic.sample.enumsample.Gender;
+
 class Student {
 
     //フィールド
     private String name;//名前
-    private String gender;//性別
+    private Gender gender;//性別
     private int jap;//国語の得点
     private int math;//数学の得点
     private int eng;//英語の得点
 
     //コンストラクタ
-    public Student(String name, String gender, int jap, int math, int eng) {
+    public Student(String name, Gender gender, int jap, int math, int eng) {
         this.name = name;
         this.gender = gender;
         this.jap = jap;
@@ -24,7 +26,7 @@ class Student {
         return name;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
@@ -51,7 +53,7 @@ class Student {
     @Override
     public String toString() {
         return String.format("名前：%s 性別：%s 国語：%d 数学：%d 英語：%d 合計：%d 平均：%.2f",
-                name,gender,jap,math,eng,sum(),ave());
+                name,gender.getJpName(),jap,math,eng,sum(),ave());
     }
 }
 
