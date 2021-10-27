@@ -63,7 +63,7 @@ class StudentMapSample {
 
             System.out.println(String.format("%s 国語平均:%.2f 数学平均:%.2f 英語平均:%.2f",
                     entry.getKey(),aveJap,aveMath,aveEng));
-            
+
         }
     }
 }
