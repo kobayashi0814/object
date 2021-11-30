@@ -1,14 +1,14 @@
 package ex.inventory;
 
 //定数
-public interface Constants {
+public class Constants {
     //OS
-    public static String WINDOWS_10  = "windows10";
-    public static String WINDOWS_11 = "windows11";
-    public static String MAC = "Mac";
+    public static final String WINDOWS_10  = "windows10";
+    public static final String WINDOWS_11 = "windows11";
+    public static final String MAC = "Mac";
 
     //bit
-    int BIT_64 = 64;
-    int BIT_32 = 32;
+    public static final int BIT_64 = 64;
+    public static final int BIT_32 = 32;
 
 }
