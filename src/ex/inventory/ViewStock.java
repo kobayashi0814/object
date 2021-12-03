@@ -14,7 +14,7 @@ public class ViewStock {
                     new PersonalComputer("わだ",5,2,30000, Constants.BIT_32, Constants.WINDOWS_10),
                     new PersonalComputer("くどう",6,2,150000, Constants.BIT_64, Constants.MAC),
                     new PersonalComputer("さらど",7,3,40000, Constants.BIT_32, Constants.WINDOWS_10),
-                    new PersonalComputer("あいざわ",8,3,700000, Constants.BIT_32, Constants.MAC)
+                    new PersonalComputer("あいざわ",8,3,70000, Constants.BIT_32, Constants.MAC)
                     ));
 
         //保管倉庫ごとの在庫金額を抽出したいのでマップにする
@@ -56,6 +56,42 @@ public class ViewStock {
                 System.out.println(entry.getKey() + ":");
                 System.out.println(entry.getValue());
             }
+
+            //storagePriceMapからさらに計算を行う
+            //倉庫ごとのPC合計金額を計算して表示
+            System.out.println("//倉庫ごとの合計金額");
+            for(Map.Entry entry : storagePriceMap.entrySet()) {
+                double sum = 0; //合計を入れる変数を定義する
+                for(Integer i : (List<Integer>)entry.getValue()) {
+                sum += i;
+                }
+            System.out.println("倉庫番号" + entry.getKey() + ":");
+            System.out.println("合計金額" + sum + "円");
+            }
+
+            //倉庫ごとの合計台数を表示
+            System.out.println("//倉庫ごとの合計台数");
+            for(Map.Entry entry : storagePriceMap.entrySet()) {
+                int cnt = ((List)entry.getValue()).size();// 合計台数
+                System.out.println("倉庫番号" + entry.getKey() + ":");
+                System.out.println("合計台数" + cnt + "台");
+            }
+
+            //倉庫別に1台ごとの平均金額を表示
+            System.out.println("//倉庫内の1台ごとの平均金額");
+            for(Map.Entry entry : storagePriceMap.entrySet()) {
+                //合計を出す
+                double sum = 0;
+                for(Integer i : (List<Integer>)entry.getValue()) {
+                    sum += i;
+                }
+                //何台あるかをカウント
+                int cnt =  ((List)entry.getValue()).size();
+                //表示
+                System.out.println("倉庫番号" +entry.getKey() + ":");
+                System.out.println("平均金額" + sum / cnt + "円/台");
+            }
+
     }
 }
 
